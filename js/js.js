@@ -15,10 +15,7 @@ progressBar.addEventListener("change", setVideoProgress);
 playButton.addEventListener("click", playPauseVideo);
 stopButton.addEventListener("click", stopVideo);
 
-
-
-
-//UTILITY FUNCTIONS ------------------------------------------------
+//FUNCTIONS ---------------------------------------------------------
 function playPauseVideo() {
     video[video.paused ? "play" : "pause"]()
     playButtonToggleIcon()
@@ -34,7 +31,6 @@ function playButtonToggleIcon() {
     }
 }
 
-
 function stopVideo() {
     video.pause();
     video.currentTime = 0;
@@ -49,7 +45,6 @@ function setVideoProgress() {
 function updateVideoProgress() {
     video.currentTime = Number((progressBar.value * video.duration) / 100);
 }
-
 
 function updateVideoProgress() {
     progressBar.value = Number((video.currentTime / video.duration) * 100)
