@@ -1,0 +1,71 @@
+
+/* ----- General --------------------------------------------------*/
+/*Para aplicar cambios si metemos 10 px de PADDING se lo resta al tamaño Natural.
+     EL Borde esta entre el contenido Exterior y La Caja por lo que ajustar Mediante
+     el BORDE ajustamos Naturalmente y lo Adentro y lo de Afuera EVITANDO pequeños desajustes
+     entre cajas.
+     
+     Explicado en el minuto 17 del Video*/
+*{box-sizing: border-box;}
+
+html, body{
+    height: 100%; /*Un error muy comun es que body ocupa el 100% de Alto, y No es asi POE ESTO este AJUSTE*/
+}
+
+body{
+ font-family: "calibri";
+ background-color: lightgray;
+ display: flex ;
+ justify-content: center; /*Centra a lo ancho*/
+ align-items: center;    /*con esta linea Centra a los Ancho y Alto*/
+}
+
+
+/* ----- PLAYER (El REPRODUCTOR completo)--------------------------*/
+.player{
+    background-color: aqua;
+    box-shadow: 0px 5px 5px black;
+    border-radius: 0px 0px 10px 10px;
+    max-width: 1280px;
+    min-width: 320px;
+}
+
+.video{
+    width: 100%; /*Asi se ajusta de Acorde al player (Max y Min)*/
+            /*Esto es RESPONSIVE*/
+}
+
+/* ----- CONTROLS -------------------------------------------------*/
+.controls{
+    padding: 1rem; /*margen alrededor de los controles*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px; /*separamos los elementos entre si(controles)*/
+}
+
+.controls > *{ /*Asi TODO lo DESCENDIENTE de la clase controls cambio el puntero
+               Evitamos asignarlo a cada control. 
+               Si No lo hacemos bien cambia el cursor al posicionarte sobre la caja de controls y No sobre los botones o la barra*/
+    cursor: pointer;
+}
+
+.button{
+    background-color: transparent;
+    border: none;
+    /*cursor: pointer;*/
+}
+
+.button i{
+    font-size: 32px;
+}
+
+.progress{
+    flex-grow: 1; /*Propiedad para que la Barra ocupe todo el Ancho Disponible*/
+
+}
+
+.timestamp{
+     font-size: 20px;
+     font-weight: bold;
+}

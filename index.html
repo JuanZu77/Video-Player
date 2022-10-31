@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Player</title>
+</head>
+
+<!--TRAER STYLOS de para ICONOS-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+
+<link rel="Stylesheet" href="css/estilos.css">
+
+<body>
+
+    <!-------Player-------> <!--POSTER es un atributo indicamos ubicacion imagen presentacion del Video-->
+    <main class="player"> 
+
+    <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" poster="../VideoPlayer/image/poster.jpg"  class="video">  
+    </video>
+     
+    <!-------Controls----->
+    <nav class="controls">
+             <!--BUTTONS-->
+        <button class="button play"> <!--Anteponer el button para que tome el Stylo en play y stop-->
+        <i class="fas fa-play"></i>
+        </button>
+
+        <button class="button stop">
+            <i class="fas fa-stop"></i>
+        </button>
+              
+              <!--BARRA-->
+              <!--En Porcentaje el Minimo de la Barra es 0% y Maximo 100% / STEP:0.1 (Porcentaje de Avance) / VALUE: valor de Inicio-->
+        <input type="range" min="0" max="100" step="0.1" value="0" class="progress">
+          
+              <!--TIEMPO de PROGRESO-->
+        <small class="timestamp">
+            00:00
+        </small>
+    </nav>
+
+
+    </main>
+    
+    <script src="js/js.js" defer></script>
+    <!--El atributom DEFER indica al navegador que no espere por el script. 
+        En lugar de ello, debe seguir procesando el HTML, construir el DOM. 
+        El script carga “en segundo plano” y se ejecuta cuando el DOM esta completo.-->
+
+        <!-- Otra Manera de relacionar el script:
+              <script type="text/javascript" src="ejercicio1.js"> </script>    -->
+</body>
+</html>
